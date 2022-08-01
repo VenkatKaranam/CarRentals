@@ -1,0 +1,14 @@
+<?php 
+    session_start();
+    if(isset($_SESSION['customer_username'])){
+        unset($_SESSION['customer_username']);
+        header('location:loginCustomer.php');
+    }
+    elseif(isset($_SESSION['agency_username'])){
+        unset($_SESSION['agency_username']);
+        header('location:loginAgency.php');
+    }
+    else{
+        header('location:index.php');
+    }
+?>
